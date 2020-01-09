@@ -1,6 +1,92 @@
+
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+$primary-blue: #1079B2;
+$primary-lightblue: #ddedf4;
+$primary-purple: #44449b;
+$primary-darkgrey: #212221;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	/*border: 1px solid red;*/
+}
 
 body {
-  background-color: $primary-background;
 }
+
+nav {
+	height: 13vh;
+  background: $primary-darkgrey;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+}
+
+.nav_drop-menu {
+  background: $primary-purple;
+	height: 4vh;
+	padding: 7px 7px;
+	transition: height .2s;
+
+}
+
+.nav_drop-menu:hover .nav_login {
+  display: block;
+  height: 6vh;
+}
+
+.nav_login {
+	float: right;
+	/*display: none;*/
+}
+
+/*.nav_login:hover {
+  display: block;
+}*/
+
+.login-input {
+	width: 125px;
+	height: 30px;
+}
+
+.nav_header {
+	font-size: 40px;
+	padding: 10px;
+	line-height: .4;
+}
+
+.nav_header-sub {
+	font-size: 14px;
+}
+
+main {
+}
+
+.main_area {
+	height: 83vh;
+	width: 68%;
+  float: left;
+  display: inline-block;
+}
+
+.main_customer-area {
+	height: 83vh;
+	width: 30%;
+  float: right;
+  background: $primary-blue;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.main_info-section {
+  height: 125px;
+  width: 250px;
+  background: $primary-blue;
+  margin: 5px;
+}
+

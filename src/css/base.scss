@@ -35,10 +35,10 @@ nav {
 
 }
 
-.nav_drop-menu:hover .nav_login {
+/*.nav_drop-menu:hover .nav_login {
   display: block;
   height: 6vh;
-}
+}*/
 
 .nav_login {
 	float: right;
@@ -88,5 +88,92 @@ main {
   width: 250px;
   background: $primary-blue;
   margin: 5px;
+}
+
+.display_customer {
+	width: 90%;
+	height: 90%;
+}
+
+.display_manager {
+	display: none;
+}
+
+
+.display {
+	display: block;
+}
+
+.display_login {
+	/*display: none;*/
+	background: $primary-lightblue;
+	height: 80vh;
+	/*display: flex;
+  align-content: center;
+  justify-content: center;*/
+} 
+
+.login-feature {
+  width: 40%;
+  height: 30%;
+  background: $primary-blue;
+  color: #ffffff;
+}
+
+.login_feature-left {
+  float: left;
+  text-align: center;
+  background: $primary-blue;
+  color: #ffffff;
+  margin: 20% 10px;
+  width: 45%;
+  height: 30%;
+}
+
+.login_feature-right {
+  float: right;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 20% 10px;
+  width: 45%;
+  height: 30%;
+}
+
+.customer_login {
+  float: right;
+  display: inline-block;
+  width: 45%;
+  height: 70%;
+  margin: 10% 10px;
+}
+
+.main_customer-area {
+	width: 45%;
+  height: 30%;
+	/*display: none;*/
+}
+
+.main_info-section {
+	width: 25%;
+  height: 35%;
+  background: $primary-blue;
+  color: #ffffff;
+}
+
+.customer_feature {
+	width: 25%;
+  height: 35%;
+  background: $primary-blue;
+  color: #ffffff;
+}
+
+.display_customer {
+  float: left;
+  text-align: center;
+}
+
+.display_none {
+	display: none;
 }
 

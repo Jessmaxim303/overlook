@@ -1,11 +1,12 @@
 class Hotel {
-	constructor() {
-
+	constructor(bookings, rooms, todaysDate) {
+		this.rooms = rooms;
+		this.bookings = bookings;
+		this.todaysDate = todaysDate;
 	}
 
-	percentBooked(bookings, rooms, todaysDate) {
-    let percent = bookings.filter(room => room.date === todaysDate)
-    return percent.length
+	numberVacantToday() {
+    return this.rooms.length - this.bookings.filter(room => room.date === this.todaysDate).filter(el => el !=undefined).length; 
 } 
 
 }

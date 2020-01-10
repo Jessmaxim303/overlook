@@ -191,6 +191,7 @@ main {
 
 .main_manager-operations {
 	background: $primary-blue;
+	font-family: 'Roboto Condensed', sans-serif;
 	color: #ffffff;
 	width: 70%;
 	height: 45%;
@@ -216,7 +217,6 @@ main {
 
 .manager_rooms-available {
   text-align: center;
-  margin-top: 10px;
 }
 
 .room_available-number {
@@ -225,4 +225,17 @@ main {
 
 .room_available-text {
 	font-size: 14px;
+}
+
+.manager_total-revenue {
+	text-align: center;
+}
+
+.room_revenue-number {
+	font-size: 33px;
+	margin-top: 23px;
+}
+
+.room_revenue-text {
+  font-size: 14px;
 }

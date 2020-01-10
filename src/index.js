@@ -13,7 +13,7 @@ var userId;
 
 
 var today = new Date();
-var date = today.getFullYear()+'/0'+ (today.getMonth()+1)+'/'+'0'+ today.getDate();
+var date = today.getFullYear()+'/0'+ (today.getMonth()+1)+'/' + today.getDate();
 
 function getData(type) {
 	const root = 'https://fe-apps.herokuapp.com/api/v1/overlook/1904';
@@ -36,9 +36,10 @@ function getData(type) {
 	getData('/bookings/bookings').then(function(booked) {
 		bookings = booked.bookings;
 		const hotel = new Hotel(bookings, rooms, date);
-	  $('.room_available-number').text(hotel.numberVacantToday(bookings, rooms, date));
+	  $('.room_available-number').text(hotel.numberVacantToday());
 	  $('.room_available-text').text('Rooms available');
 	  $('.room_available-date').text(date);
+	  $('.room_revenue-number').text('$' + hotel.totalRevenueToday())
 	})
 
 	$('.js_login-submit').on('click', function() {

@@ -208,11 +208,21 @@ main {
 	width: 150px;
 	height: 150px;
 	background: $primary-blue;
+	font-family: 'Roboto Condensed', sans-serif;
 	color: #ffffff;
 	margin: 10px;
 }
 
 
 .manager_rooms-available {
+  text-align: center;
+  margin-top: 10px;
+}
 
+.room_available-number {
+	font-size: 75px;
+}
+
+.room_available-text {
+	font-size: 14px;
 }

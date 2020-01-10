@@ -6,40 +6,6 @@ import Manager from './Manager';
 import Room from './Room';
 import Hotel from './Hotel';
 
-// let users;
-// let rooms;
-
-// var today = new Date();
-// var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+0+today.getDate();
-
-// function getData(type) {
-// 	const root = 'https://fe-apps.herokuapp.com/api/v1/overlook/1904';
-// 	const url = `${root}${type}`;
-// 	const promise = fetch(url)
-// 	                .then(data => data.json());
-// 	return promise;
-// }
-
-// getData('/users/users').then(function(user) {
-//   	users = user.users;
-// 	  users.forEach(function(user) {
-// 	})
-
-// getData('/bookings/bookings').then(function(booked) {
-// 		bookings = booked.bookings;
-// 		const room = new Room(bookings);
-//   	// console.log(users)
-
-// getData('/rooms/rooms').then(function(room) {
-// 	  rooms = room.rooms;
-// 		const hotel = new Hotel(rooms);
-// 		console.log(rooms)
-// 		$('.room_available-text').text('%' + hotel.percentBooked(bookings, rooms, date));
-	  
-// 	})
-
-// })
-
 var users;
 var rooms;
 var bookings;
@@ -69,15 +35,10 @@ function getData(type) {
 
 	getData('/bookings/bookings').then(function(booked) {
 		bookings = booked.bookings;
-		const hotel = new Hotel();
-	  $('.room_available-text').text(hotel.percentBooked(bookings, rooms, date) + ' Rooms available today');
-
-
-  $('.js_drop-junior').on('click', function() {
-  	bookings = booked.bookings;
-		const room = new Room(bookings);
-  })
-  
+		const hotel = new Hotel(bookings, rooms, date);
+	  $('.room_available-number').text(hotel.numberVacantToday(bookings, rooms, date));
+	  $('.room_available-text').text('Rooms available');
+	  $('.room_available-date').text(date);
 	})
 
 	$('.js_login-submit').on('click', function() {

@@ -105,12 +105,8 @@ main {
 }
 
 .display_login {
-	/*display: none;*/
 	background: $primary-lightblue;
 	height: 80vh;
-	/*display: flex;
-  align-content: center;
-  justify-content: center;*/
 } 
 
 .login-feature {
@@ -177,3 +173,46 @@ main {
 	display: none;
 }
 
+.main_manager {
+	background: $primary-lightblue;
+	height: 80vh;
+	display: flex;
+	/*padding-top: 15%;*/
+	flex-direction: column;
+	justify-content: center;
+}
+
+/*.display_manager {
+	width: 70%;
+	height: 45%;
+	background: $primary-blue;
+	border: 1px solid red;
+}*/
+
+.main_manager-operations {
+	background: $primary-blue;
+	color: #ffffff;
+	width: 70%;
+	height: 45%;
+	margin: 0 auto;
+}
+
+.manager_info-boxes {
+	display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.info_boxes {
+	width: 150px;
+	height: 150px;
+	background: $primary-blue;
+	color: #ffffff;
+	margin: 10px;
+}
+
+
+.manager_rooms-available {
+
+}

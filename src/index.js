@@ -30,7 +30,7 @@ function getData(type) {
 
 	getData('/rooms/rooms').then(function(room) {
 	  rooms = room.rooms;
-		const hotel = new Hotel(rooms);
+
 	})
 
 	getData('/bookings/bookings').then(function(booked) {
@@ -40,6 +40,7 @@ function getData(type) {
 	  $('.room_available-text').text('Rooms available');
 	  $('.room_available-date').text(date);
 	  $('.room_revenue-number').text('$' + hotel.totalRevenueToday())
+	  $('.percent_number').text(hotel.percentOccupied() + '%')
 	})
 
 	$('.js_login-submit').on('click', function() {

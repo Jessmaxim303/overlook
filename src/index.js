@@ -43,28 +43,19 @@ function getData(type) {
 	  $('.percent_number').text(hotel.percentOccupied() + '%')
 	})
 
-	$('.js_login-submit').on('click', function() {
-		  let userId = Number($('.user_name').val().slice(-2)) - 1;
-  	  const customer = new Customer(userId);
-  	  const room = new Room(bookings);
-    if ($('.user_name').val() === 'manager' && $('.user_pswd').val() === 'overlook2019') {
-      window.location = "./manager.html";
-  } else if ($('.user_name').val() === 'customer' + `${$('.user_name').val().slice(-2)}` && $('.user_pswd').val() === 'overlook2019') {
-      
-    }
-
-  });
-
 });
 
 
 $('.js_login-submit').on('click', function() {
-
+  let userId = Number($('.user_name').val().slice(-2)) - 1;
   if ($('.user_name').val() === 'manager' && $('.user_pswd').val() === 'overlook2019') {
       window.location = "../manager.html";
-  } else if ($('.user_name').val() === 'customer' + `${$('.user_name').val().slice(-2)}` && $('.user_pswd').val() === 'overlook2019') {
+    } else if ($('.user_name').val() === 'customer' + `${$('.user_name').val().slice(-2)}` && $('.user_pswd').val() === 'overlook2019') {
+    	const customer = new Customer(userId, users)
       $('.login_feature-right').addClass('customer_login')
       $('.login_feature-left').addClass('display_none')
+      $('.js_customer-name').text(customer.returnUserName())
+      $('.js_customer-welcome').text("Welcome")
      
     }
 

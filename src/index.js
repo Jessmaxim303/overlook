@@ -55,7 +55,8 @@ $('.js_login-submit').on('click', function() {
       $('.login_feature-left').addClass('display_none')
       $('.display_customer').removeClass('display_none')
       $('.js_customer-name').text(customer.returnUserName())
-      $('.js_customer-welcome').text("Welcome")
+      $('.js_customer-welcome').text('Welcome')
+      $('.js_customer-money').text('Totel money spent $' + customer.totalMoneySpent(bookings, rooms))
     }
       populatePastBookings(userId, users, bookings)
 

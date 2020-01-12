@@ -5,7 +5,7 @@ class Customer {
 	}
 
 	returnUserName() {
-		return this.userData.find(user => user.id === this.userId)
+		return this.userData.find(user => user.id === this.userId).name
 	}
 
 	returnBookedRooms(booking) {

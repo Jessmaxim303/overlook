@@ -15,7 +15,7 @@ var userId;
 var today = new Date();
 var date = today.getFullYear()+'/0'+ (today.getMonth()+1)+'/' + today.getDate();
 
-function getData(type) {
+const getData = (type) => {
 	const root = 'https://fe-apps.herokuapp.com/api/v1/overlook/1904';
 	const url = `${root}${type}`;
 	const promise = fetch(url)
@@ -45,7 +45,6 @@ function getData(type) {
 
 });
 
-
 $('.js_login-submit').on('click', function() {
   let userId = Number($('.user_name').val().slice(-2)) - 1;
   if ($('.user_name').val() === 'manager' && $('.user_pswd').val() === 'overlook2019') {
@@ -54,9 +53,17 @@ $('.js_login-submit').on('click', function() {
     	const customer = new Customer(userId, users)
       $('.login_feature-right').addClass('customer_login')
       $('.login_feature-left').addClass('display_none')
+      $('.display_customer').removeClass('display_none')
       $('.js_customer-name').text(customer.returnUserName())
       $('.js_customer-welcome').text("Welcome")
-     
     }
+      populatePastBookings(userId, users, bookings)
 
 })
+
+  function populatePastBookings(userId, users, bookings) {
+    const customer = new Customer(userId, users)
+    $('.main_customer-area').after(customer.returnBookedRooms(bookings));
+  }
+
+

@@ -75,24 +75,17 @@ main {
 }
 
 .main_customer-area {
-	height: 83vh;
-	width: 30%;
+  height: 18vh;
+  width: 45%;
   float: right;
   background: $primary-blue;
   color: #ffffff;
   padding: 5px;
-}
-
-.main_info-section {
-  height: 125px;
-  width: 250px;
-  background: $primary-blue;
   margin: 5px;
 }
 
 .display_customer {
-	width: 90%;
-	height: 90%;
+	height: 100%;
 }
 
 .display_manager {
@@ -140,21 +133,17 @@ main {
   float: right;
   display: inline-block;
   width: 45%;
-  height: 70%;
-  margin: 10% 10px;
-}
-
-.main_customer-area {
-	width: 45%;
-  height: 30%;
-	/*display: none;*/
+  height: 80%;
+  margin: 7% 10px;
 }
 
 .main_info-section {
-	width: 25%;
-  height: 35%;
+	width: 45%;
+  height: 25%;
   background: $primary-blue;
   color: #ffffff;
+  margin: 5px;
+  display: inline-block;
 }
 
 .customer_feature {
@@ -166,7 +155,9 @@ main {
 
 .display_customer {
   float: left;
+  width: 45%;
   text-align: center;
+  display: inline-block;
 }
 
 .display_none {

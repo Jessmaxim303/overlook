@@ -27,37 +27,49 @@ nav {
   justify-content: center;
 }
 
-.nav_drop-menu {
+.nav_loggin-menu {
   background: $primary-purple;
 	height: 4vh;
 	padding: 7px 7px;
-	transition: height .2s;
 
 }
 
-/*.nav_drop-menu:hover .nav_login {
-  display: block;
-  height: 6vh;
+/*.nav_search-box {
+  float: left;
 }*/
 
-.nav_login {
+.nav_login-box {
 	float: right;
 	/*display: none;*/
 }
 
-/*.nav_login:hover {
-  display: block;
-}*/
+.nav_search-box {
+  float: left;
+}
 
 .login-input {
 	width: 125px;
 	height: 30px;
 }
 
+.submit {
+  height: 34px;
+  width: 50px
+}
 .nav_header {
 	font-size: 40px;
 	padding: 10px;
 	line-height: .4;
+}
+
+.booked_date-section {
+  background: $primary-purple;
+  height: 5vh;
+  padding: 7px 7px;
+}
+
+.booked_input {
+  background: #ffffff;
 }
 
 .nav_header-sub {
@@ -75,23 +87,20 @@ main {
 }
 
 .main_customer-area {
-  height: 18vh;
-  width: 45%;
+  height: 5vh;
+  width: 42%;
   float: right;
   background: $primary-blue;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 12px;
   color: #ffffff;
   padding: 5px;
   margin: 5px;
 }
 
-.display_customer {
-	height: 100%;
-}
-
 .display_manager {
 	display: none;
 }
-
 
 .display {
 	display: block;
@@ -99,7 +108,10 @@ main {
 
 .display_login {
 	background: $primary-lightblue;
-	height: 80vh;
+	min-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 } 
 
 .login-feature {
@@ -114,9 +126,32 @@ main {
   text-align: center;
   background: $primary-blue;
   color: #ffffff;
-  margin: 20% 10px;
+  margin: 17% 10px;
   width: 45%;
-  height: 30%;
+  height: 36vh;
+}
+
+.customer_booked-room {
+  background: #42b1ee;
+  display: inline-block;
+  width: 30%;
+  height: 85vh;
+  margin: 10px;
+  overflow: scroll;
+}
+
+.customer_booked-text {
+  font-size: 32px;
+  padding-top: 10px;
+}
+
+.customer_booked-header {
+  /*width: 80%;*/
+  height: 8vh;
+  background: $primary-darkgrey;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+  color: #ffffff;
 }
 
 .login_feature-right {
@@ -124,17 +159,17 @@ main {
   display: flex;
   align-content: center;
   justify-content: center;
-  margin: 20% 10px;
+  margin: 17% 10px;
   width: 45%;
-  height: 30%;
+  height: 36vh;
 }
 
 .customer_login {
   float: right;
   display: inline-block;
-  width: 45%;
-  height: 80%;
-  margin: 7% 10px;
+  width: 30%;
+  height: 85vh;
+  margin: 10px;
 }
 
 .main_info-section {
@@ -155,9 +190,11 @@ main {
 
 .display_customer {
   float: left;
-  width: 45%;
+  width: 30%;
   text-align: center;
   display: inline-block;
+  margin: 10px;
+  overflow: scroll;
 }
 
 .display_none {
@@ -168,17 +205,9 @@ main {
 	background: $primary-lightblue;
 	height: 80vh;
 	display: flex;
-	/*padding-top: 15%;*/
 	flex-direction: column;
 	justify-content: center;
 }
-
-/*.display_manager {
-	width: 70%;
-	height: 45%;
-	background: $primary-blue;
-	border: 1px solid red;
-}*/
 
 .main_manager-operations {
 	background: $primary-blue;
@@ -242,3 +271,24 @@ main {
 .percent_text {
 	font-size: 14px;
 }
+
+.booking_room-container {
+  height: 20vh;
+  background: $primary-lightblue;
+  margin: 7px;
+}
+
+.booking_room-image {
+  height: 15vh;
+  width: 12vw;
+  background: $primary-purple;
+}
+
+.booking_room-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+

@@ -3,6 +3,8 @@
   <head>
     <title>Overlook Hotel</title>
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap" rel="stylesheet">
+</head>
   </head>
   <body>
   	<nav class="nav_section">
@@ -16,26 +18,43 @@
         the most peaceful place on earth
       </p>
   	</nav>
-  	  <section class="nav_drop-menu dropstyle">
-  	    <section class="nav_login dropdown-content">
+
+  	  <section class="nav_loggin-menu">
+<!-- nav bar search -->
+        <!-- <section class="nav_search-box">
+          <input class='nav_search-input login-input' placeholder="Search">
+          <button class='nav_search-button submit'>Submit</button>
+        </section> -->
+  	    <section class="nav_login-box">
           <input class='user_name login-input' placeholder="User Name & Id Number"></input>
           <input class='user_pswd login-input' placeholder="Password"></input>
-          <button class='js_login-submit login-input'>
+          <button class='js_login-submit submit'>
             Submit
           </button>
         </section>
+
       </section>
     
       <main class="display_login">
+
         <section class="login_feature-left">
         	<h1>Featured Room</h1>
         </section>	
 
         	<section class="display_customer display_none">
       	    <section class="main_customer-area">
-      	  	  
       	    </section>
           </section>
+
+          <section class="customer_booked-room display_none">
+            <section class="customer_booked-header">
+              <h1 class="customer_booked-text">Book a Room</h1>
+            </section>
+            <section class="booked_date-section">
+              <input class='booked_input login-input' placeholder="2020/02/07">
+              <button class='booked_date-button submit'>Submit</button>
+            </section>
+          </section>  
 
         <section class="login_feature-right login-feature">
           <h1 class="js_customer-welcome">

@@ -54,17 +54,27 @@ $('.js_login-submit').on('click', function() {
       $('.login_feature-right').addClass('customer_login')
       $('.login_feature-left').addClass('display_none')
       $('.display_customer').removeClass('display_none')
+      $('.customer_booked-room').removeClass('display_none')
       $('.js_customer-name').text(customer.returnUserName())
       $('.js_customer-welcome').text('Welcome')
       $('.js_customer-money').text('Totel money spent $' + customer.totalMoneySpent(bookings, rooms))
     }
       populatePastBookings(userId, users, bookings)
+      populateAllBooking(bookings, rooms, date)
 
 })
 
   function populatePastBookings(userId, users, bookings) {
     const customer = new Customer(userId, users)
     $('.main_customer-area').after(customer.returnBookedRooms(bookings));
+  }
+
+// booked_date-section
+
+  function populateAllBooking(bookings, rooms, date) {
+  	const hotel = new Hotel(bookings, rooms, date);
+  	 $('.booked_date-section').after(hotel.returnAllRooms());
+  	hotel.returnAllRooms()
   }
 
 

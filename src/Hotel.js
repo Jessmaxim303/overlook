@@ -38,8 +38,10 @@ class Hotel {
       return `<section class="booking_room-container">
       <section class="booking_room-image"></section>
         <section class="booking_room-text">
-          <h1>Room type ${room.roomType}</h1>
-          <h1>Room number ${room.number}</h1>
+          <h3>Room Room Number ${room.number}</h3>
+          <h3>Room Type ${room.roomType}</h3>
+          <h3>Room ${room.numBeds} ${room.bedSize}size bed</h3>
+          <h3>Room Cost: $${room.costPerNight}</h3>
         </section>
       </section>`
     })
@@ -50,6 +52,24 @@ class Hotel {
       return `<section class="main_customer-area">
       <h1>Date Stayed ${booking.date}</h1>
       <h1>Room number ${booking.roomNumber}</h1>
+      </section>`
+    })
+  }
+
+  returnRoomsForDate(dateInput) {
+    return this.rooms.filter(room => {
+      return this.bookings.find(booked => {
+      return (dateInput === booked.date && room.number === booked.roomNumber)
+    })  
+}).map(room => {
+      return `<section class="room_date-container">
+      <section class="booking_room-image"></section>
+        <section class="booking_room-text">
+          <h3>Room Room Number ${room.number}</h3>
+          <h3>Room Type ${room.roomType}</h3>
+          <h3>Room ${room.numBeds} ${room.bedSize}size bed</h3>
+          <h3>Room Cost: $${room.costPerNight}</h3>
+        </section>
       </section>`
     })
   }

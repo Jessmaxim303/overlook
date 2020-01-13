@@ -69,12 +69,18 @@ $('.js_login-submit').on('click', function() {
     $('.main_customer-area').after(customer.returnBookedRooms(bookings));
   }
 
-// booked_date-section
-
   function populateAllBooking(bookings, rooms, date) {
   	const hotel = new Hotel(bookings, rooms, date);
-  	 $('.booked_date-section').after(hotel.returnAllRooms());
-  	hotel.returnAllRooms()
+  	 $('.js_all-rooms').html(hotel.returnAllRooms());
+  }
+
+$(".booked_date-button").click(populateRoomsByDate)
+
+  function populateRoomsByDate() {
+  	let dateInput = $('.booked_date-input').val()
+  	const hotel = new Hotel(bookings, rooms, date);
+  	$('.js_all-rooms').remove()
+  	$('.booked_date-section').after(hotel.returnRoomsForDate(dateInput))
   }
 
 

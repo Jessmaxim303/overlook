@@ -33,20 +33,6 @@ class Hotel {
     return Number((percent.length / this.rooms.length).toFixed(2) * 100);
  }
 
-  returnAllRooms() {
-    return this.rooms.map(room => {
-      return `<section class="booking_room-container">
-      <section class="booking_room-image"></section>
-        <section class="booking_room-text">
-          <h3>Room Room Number ${room.number}</h3>
-          <h3>Room Type ${room.roomType}</h3>
-          <h3>Room ${room.numBeds} ${room.bedSize}size bed</h3>
-          <h3>Room Cost: $${room.costPerNight}</h3>
-        </section>
-      </section>`
-    })
-  }
-
   returnBookedRooms(booking) {
     return booking.filter(room => room.userID === this.userId).map(booking => {
       return `<section class="main_customer-area">

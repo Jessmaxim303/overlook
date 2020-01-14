@@ -1,10 +1,15 @@
 import $ from 'jquery';
 import './css/base.scss';
 
+import dom from './domModifier'; 
+
 import Customer from './Customer';
 import Manager from './Manager';
 import Room from './Room';
 import Hotel from './Hotel';
+
+
+console.log(dom)
 
 var users;
 var rooms;
@@ -36,11 +41,12 @@ const getData = (type) => {
 	getData('/bookings/bookings').then(function(booked) {
 		bookings = booked.bookings;
 		const hotel = new Hotel(bookings, rooms, date);
-	  $('.room_available-number').text(hotel.numberVacantToday());
-	  $('.room_available-text').text('Rooms available');
-	  $('.room_available-date').text(date);
-	  $('.room_revenue-number').text('$' + hotel.totalRevenueToday())
-	  $('.percent_number').text(hotel.percentOccupied() + '%')
+    let vacancyToday = hotel.numberVacantToday();
+    let totalMoney = hotel.totalRevenueToday();
+    let dailyPercent = hotel.percentOccupied();
+		dom.vacantRoomsToday(vacancyToday, date);
+		dom.revenueToday(totalMoney)
+		dom.percentOccupiedToday(dailyPercent)
 	})
 
 });
@@ -55,9 +61,11 @@ $('.js_login-submit').on('click', function() {
       $('.login_feature-left').addClass('display_none')
       $('.display_customer').removeClass('display_none')
       $('.customer_booked-room').removeClass('display_none')
-      $('.js_customer-name').text(customer.returnUserName())
-      $('.js_customer-welcome').text('Welcome')
-      $('.js_customer-money').text('Totel money spent $' + customer.totalMoneySpent(bookings, rooms))
+      let name = customer.returnUserName()
+      let money = customer.totalMoneySpent(bookings, rooms)
+      dom.userName(name)
+      dom.welcome()
+      dom.userTotalRevenueSpent(money)
     }
       populatePastBookings(userId, users, bookings)
       populateAllBooking(bookings, rooms, date)
@@ -71,7 +79,7 @@ $('.js_login-submit').on('click', function() {
 
   function populateAllBooking(bookings, rooms, date) {
   	const hotel = new Hotel(bookings, rooms, date);
-  	 $('.js_all-rooms').html(hotel.returnAllRooms());
+  	dom.allRooms(hotel.rooms)
   }
 
 $(".booked_date-button").click(populateRoomsByDate)

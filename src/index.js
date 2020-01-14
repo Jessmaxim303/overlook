@@ -63,18 +63,21 @@ $('.js_login-submit').on('click', function() {
       $('.customer_booked-room').removeClass('display_none')
       let name = customer.returnUserName()
       let money = customer.totalMoneySpent(bookings, rooms)
+      
       dom.userName(name)
       dom.welcome()
       dom.userTotalRevenueSpent(money)
     }
       populatePastBookings(userId, users, bookings)
       populateAllBooking(bookings, rooms, date)
-
 })
 
   function populatePastBookings(userId, users, bookings) {
-    const customer = new Customer(userId, users)
-    $('.main_customer-area').after(customer.returnBookedRooms(bookings));
+      const customer = new Customer(userId, users)
+      let x = customer.returnBookedRooms(bookings)
+      // console.log(x)
+      dom.bookedRooms(x)
+    // $('.main_customer-area').after(customer.returnBookedRooms(bookings));
   }
 
   function populateAllBooking(bookings, rooms, date) {

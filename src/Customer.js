@@ -9,12 +9,7 @@ class Customer {
 	}
 
 	returnBookedRooms(booking) {
-    return booking.filter(room => room.userID === this.userId).map(booking => {
-    	return `<section class="main_customer-area">
-    	<h1>Date Stayed ${booking.date}</h1>
-    	<h1>Room number ${booking.roomNumber}</h1>
-    	</section>`
-    })
+    return booking.filter(room => room.userID === this.userId)
 	}
 
 	totalMoneySpent(booking, rooms) {

@@ -134,6 +134,17 @@ main {
   height: 36vh;
 }
 
+.nav_left-feature {
+  height: 6vh;
+  background: $primary-darkgrey;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.feature_body {
+  display: flex;
+  flex-direction: 
+}
+
 .customer_booked-room {
   background: #42b1ee;
   display: inline-block;

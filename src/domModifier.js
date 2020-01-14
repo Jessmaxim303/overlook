@@ -40,7 +40,18 @@ const dom = {
 
 	percentOccupiedToday: function(percent) {
     $('.percent_number').text(`${percent}%`)
-	}
+	},
+
+  bookedRooms: function(booked) {
+    return booked.map(room => {
+    return $('.main_customer-area').append(`
+      <section class="main_customer-box">
+       <h1>Date Stayed ${room.date}</h1>
+       <h1>Room number ${room.roomNumber}</h1>
+       </section>`);
+    })
+  }
+
 
 
 }; //end

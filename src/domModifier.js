@@ -23,6 +23,7 @@ const dom = {
           <h3>Room Type ${room.roomType}</h3>
           <h3>Room ${room.numBeds} ${room.bedSize}size bed</h3>
           <h3>Room Cost: $${room.costPerNight}</h3>
+          <button class="customer_book-button">Book</button>
         </section>
       </section>`);
     })

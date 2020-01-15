@@ -279,6 +279,11 @@ nav {
 	font-size: 14px;
 }
 
+.room_available-today {
+  display: inline-block;
+  float: left;
+}
+
 .manager_total-revenue {
 	text-align: center;
 }
@@ -363,6 +368,18 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.manager_delete-book {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: right;
+}
+
+.manager_name-group {
+  display: inline-block;
+  float: left;
 }
 
 

@@ -3,9 +3,7 @@ class Manager {
 
 	}
 	
-	searchUserName() {
-		
-	}
+	
 
 
 }

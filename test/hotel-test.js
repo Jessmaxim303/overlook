@@ -35,7 +35,7 @@ describe('Hotel', function() {
   });
 
   it('should return the totel revenue for today', () => {
-    expect(hotel.totalRevenueToday()).to.equal(358.4);
+    expect(hotel.totalRevenueToday()).to.equal('358.40');
   });
 
   it('should return the percent of rooms occupied for today', () => {

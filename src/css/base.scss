@@ -4,8 +4,7 @@ $primary-blue: #1079B2;
 $primary-lightblue: #ddedf4;
 $primary-purple: #44449b;
 $primary-darkgrey: #212221;
-/*$primary-subfont: 'Dancing Script', cursive;
-$primary-font: 'Roboto Condensed', sans-serif;*/
+$primary-font: 'Roboto Condensed', sans-serif;
 
 
 * {
@@ -13,37 +12,24 @@ $primary-font: 'Roboto Condensed', sans-serif;*/
 	padding: 0;
 }
 
-* {
-	/*border: 1px solid red;*/
-}
-
-body {
-}
-
 nav {
-	height: 13vh;
   background: $primary-darkgrey;
   color: #ffffff;
-  text-align: center;
   display: flex;
   flex-direction: column; 
+  height: 13vh;
   justify-content: center;
+  text-align: center;
 }
 
 .nav_loggin-menu {
   background: $primary-purple;
 	height: 4vh;
 	padding: 7px 7px;
-
 }
-
-/*.nav_search-box {
-  float: left;
-}*/
 
 .nav_login-box {
 	float: right;
-	/*display: none;*/
 }
 
 .nav_search-box {
@@ -60,9 +46,9 @@ nav {
   width: 50px
 }
 .nav_header {
-	font-size: 40px;
-	padding: 10px;
-	line-height: .4;
+  font-size: 40px;
+  line-height: .4;
+  padding: 10px;
 }
 
 .booked_date-section {
@@ -79,17 +65,11 @@ nav {
 	font-size: 14px;
 }
 
-main {
-}
-
 .main_area {
-	height: 83vh;
-	width: 68%;
-  float: left;
+  height: 83vh;
+  width: 68%;
   display: inline-block;
-}
-
-.main_customer-area {
+  float: left;
 }
 
 .main_customer-box {

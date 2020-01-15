@@ -1,3 +1,7 @@
+import dom from './domModifier'; 
+
+console.log(dom)
+
 class Customer {
 	constructor(userId, users) {
     this.userId = userId,
@@ -7,6 +11,7 @@ class Customer {
 
 	returnUserName() {
 		this.name = this.userData.find(user => user.id === this.userId).name
+		dom.userName(this.name)
 		return this.name
 	}
 
@@ -20,6 +25,11 @@ class Customer {
 			return acc
 		}, 0)
 	}
+
+	saveToLocal() {
+    let localData = JSON.stringify(this.userData);
+    global.localStorage.setItem('user data', localData);
+  }
 
 }
 

@@ -11,7 +11,6 @@ const dom = {
 	},
 
 	userTotalRevenueSpent: function(money) {
-    console.log(money)
     $('.js_customer-money').text(`Total money spent $${money}`)
     $('.manager_user-money').text(`Total money spent $${money}`)
 	},

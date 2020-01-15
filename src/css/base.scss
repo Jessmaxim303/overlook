@@ -118,6 +118,7 @@ main {
 	min-height: 80vh;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 } 
 
 .login-feature {
@@ -139,6 +140,7 @@ main {
 
 .nav_left-feature {
   height: 4vh;
+  width: 100%;
   background: $primary-darkgrey;
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -193,7 +195,6 @@ main {
 }
 
 .customer_booked-header {
-  /*width: 80%;*/
   height: 8vh;
   background: $primary-darkgrey;
   font-family: 'Roboto Condensed', sans-serif;
@@ -206,9 +207,12 @@ main {
   display: flex;
   align-content: center;
   justify-content: center;
+  text-align: center;
+  color: #ffffff;
   margin: 17% 10px;
   width: 45%;
   height: 36vh;
+  border: 2px solid $primary-darkgrey
 }
 
 .customer_login {
@@ -378,6 +382,7 @@ main {
   flex-direction: row;
   justify-content: space-between;
 }
+
 
 
 

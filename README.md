@@ -23,4 +23,5 @@ Lots of bigs wins. I really grinded one this one and got really far. I was impre
 
 #### Comp:
 
-![comp](https://ibb.co/fX5j9xc)
+![comp](https://i.ibb.co/hgj3cmq/Screen-Shot-2020-01-15-at-7-41-54-AM.png)
+

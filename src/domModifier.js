@@ -68,6 +68,7 @@ const dom = {
       <section class="main_customer-box">
        <h1>Date Stayed ${room.date}</h1>
        <h1>Room number ${room.roomNumber}</h1>
+       <h1>Room number ${room.id}</h1>
       </section>`);
     })
     $('.manager_user-booking').text()

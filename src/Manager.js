@@ -27,6 +27,16 @@ class Manager extends Customer{
 		})
 		return money.toFixed(2)
 	}
+
+	postDelete(bookingId) {
+    fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings", {
+      method: "DELETE",
+      headers: {"Content-Type": "Application/JSON"},
+      body: JSON.stringify({
+        id: parseInt(bookingId),
+      })
+    })
+  }
 	
 
 }

@@ -20,6 +20,7 @@ $('.booked_date-button').click(populateRoomsByDate)
 $('.booked_type-room').click(displayRoomByTypeEvent)
 $('.js_all-rooms').click(bookRoomEvent)
 $('.manager_search-button').click(searchUsersByName)
+$('.manager_delete-button').click(managerDeleteBooking)
 
 const getData = (type) => {
 	const root = 'https://fe-apps.herokuapp.com/api/v1/overlook/1904';
@@ -52,7 +53,7 @@ const getData = (type) => {
 });
 
 $('.js_login-submit').on('click', function() {
-  let userId = Number($('.user_name').val().slice(-2)) - 1;
+     userId = Number($('.user_name').val().slice(-2)) - 1;
   if ($('.user_name').val() === 'manager' && $('.user_pswd').val() === 'overlook2019') {
       window.location = "../manager.html";
     } else if ($('.user_name').val() === 'customer' + `${$('.user_name').val().slice(-2)}` && $('.user_pswd').val() === 'overlook2019') {
@@ -97,14 +98,14 @@ $('.js_login-submit').on('click', function() {
 
   function bookRoomEvent(e) {
     let booked = rooms.filter(room => room.number === Number(e.target.attributes[1].value))[0]
-    console.log(booked)
+    // console.log(booked.number.toString())
     fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings", {
     method: "POST",
     headers: {"Content-Type": "Application/JSON"},
     body: JSON.stringify({
-      userID: userId,
+      userID: parseInt(userId),
       date: date,
-      roomNumber: booked.number
+      roomNumber: booked.number.toString()
       })
     })
   }
@@ -119,6 +120,13 @@ $('.js_login-submit').on('click', function() {
     dom.managerUserMoney(money)
     dom.managerUserInfo(userName)
     dom.managerUsersPastBooking(roomsArr)
+  }
+
+  function managerDeleteBooking() {
+    const manager = new Manager(userId, users)
+    let bookingId = ($('.manager_delete-input').val())
+    console.log(bookingId)
+    manager.postDelete(bookingId)
   }
   
 

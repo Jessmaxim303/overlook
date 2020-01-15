@@ -1,11 +1,13 @@
 class Customer {
 	constructor(userId, users) {
     this.userId = userId,
+    this.name = '',
     this.userData = users
 	}
 
 	returnUserName() {
-		return this.userData.find(user => user.id === this.userId).name
+		this.name = this.userData.find(user => user.id === this.userId).name
+		return this.name
 	}
 
 	returnBookedRooms(booking) {
@@ -18,7 +20,6 @@ class Customer {
 			return acc
 		}, 0)
 	}
-
 
 }
 

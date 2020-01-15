@@ -3,6 +3,9 @@ class Manager {
 
 	}
 	
+	searchUserName() {
+		
+	}
 
 
 }

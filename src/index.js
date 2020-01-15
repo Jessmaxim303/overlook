@@ -64,6 +64,7 @@ $('.js_login-submit').on('click', function() {
       let userName = customer.returnUserName()
       let money = customer.totalMoneySpent(bookings, rooms)
       dom.userName(userName)
+      dom.welcome()
       dom.userTotalRevenueSpent(money)
     }
     $()

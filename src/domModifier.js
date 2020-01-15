@@ -12,7 +12,6 @@ const dom = {
 
 	userTotalRevenueSpent: function(money) {
     $('.js_customer-money').text(`Total money spent $${money}`)
-    $('.manager_user-money').text(`Total money spent $${money}`)
 	},
 
 	allRooms: function(rooms) {
@@ -56,7 +55,22 @@ const dom = {
   },
 
   managerUserInfo: function(username) {
-    $('.manager_user-name').html(username)
+    $('.manager_user-name').text(username)
+  },
+
+  managerUserMoney: function(money) {
+    $('.manager_user-money').text('$' + money)
+  },
+
+  managerUsersPastBooking: function(roomsArr) {
+    return roomsArr.map(room => {
+    return $('.manager_user-booking').append(`
+      <section class="main_customer-box">
+       <h1>Date Stayed ${room.date}</h1>
+       <h1>Room number ${room.roomNumber}</h1>
+      </section>`);
+    })
+    $('.manager_user-booking').text()
   }
 
 }; //end

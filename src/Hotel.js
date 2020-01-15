@@ -30,7 +30,7 @@ class Hotel {
     	}
     	return acc
     }, []).filter(el => el !=undefined);
-    return Number((percent.length / this.rooms.length).toFixed(2) * 100);
+    return Number((percent.length / this.rooms.length) * 100).toFixed();
  }
 
   returnRoomsForDate(dateInput) {

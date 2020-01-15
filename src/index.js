@@ -16,8 +16,9 @@ var userId;
 var today = new Date();
 var date = today.getFullYear()+'/0'+ (today.getMonth()+1)+'/' + today.getDate();
 
-$(".booked_date-button").click(populateRoomsByDate)
-$('.booked_type-room').click(displayRoomByType)
+$('.booked_date-button').click(populateRoomsByDate)
+$('.booked_type-room').click(displayRoomByTypeEvent)
+$('.js_all-rooms').click(bookRoomEvent)
 
 const getData = (type) => {
 	const root = 'https://fe-apps.herokuapp.com/api/v1/overlook/1904';
@@ -86,16 +87,38 @@ $('.js_login-submit').on('click', function() {
   function populateRoomsByDate() {
   	let dateInput = $('.booked_date-input').val()
   	const hotel = new Hotel(bookings, rooms, date);
-  	$('.js_all-rooms').remove()
-  	$('.booked_date-section').after(hotel.returnRoomsForDate(dateInput))
+    let byDate = hotel.returnRoomsForDate(dateInput)
+    dom.allRooms(byDate)
   }
 
-  function displayRoomByType(e) {
+  function displayRoomByTypeEvent(e) {
     const hotel = new Hotel(bookings, rooms, date);
     let roomType = e.target.attributes[1].value;
     let typeArray = hotel.returnRoomsByType(roomType)
-    dom.roomByType(typeArray)
+    dom.allRooms(typeArray)
 }
 
+  function bookRoomEvent(e) {
+    // console.log(e.target.attributes[1].value)
+    let booked = rooms.filter(room => room.number === Number(e.target.attributes[1].value))[0]
+    console.log(booked)
+    fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "userID": userId,
+          "date": date,
+    "roomNumber": booked.number
+      })
+    })
 
+.then(response => response.json())
+    .then(data => console.log(data))
+    .then()
+    .catch();
+  
+
+  }
 

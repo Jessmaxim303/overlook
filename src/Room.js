@@ -1,8 +1,9 @@
 class Room {
 
 	constructor() {
-		this.id = 0;
-		this.roomNumber = 0;
+		this.number = 0;
+		this.roomType = 0;
+		this.bidet = true;
 		this.roomAvailable = true;
 		this.roomServiceCharges = [];
 	}

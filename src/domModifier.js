@@ -15,6 +15,8 @@ const dom = {
 	},
 
 	allRooms: function(rooms) {
+    console.log(rooms)
+    $('.booking_room-container').remove();
 		return rooms.map(room => {
 		return $('.js_all-rooms').append(`<section class="booking_room-container">
       <section class="booking_room-image"></section>
@@ -23,7 +25,7 @@ const dom = {
           <h3>Room Type ${room.roomType}</h3>
           <h3>Room ${room.numBeds} ${room.bedSize}size bed</h3>
           <h3>Room Cost: $${room.costPerNight}</h3>
-          <button class="customer_book-button">Book</button>
+          <button class="customer_book-button" data="${room.number}">Book</button>
         </section>
       </section>`);
     })
@@ -49,26 +51,9 @@ const dom = {
       <section class="main_customer-box">
        <h1>Date Stayed ${room.date}</h1>
        <h1>Room number ${room.roomNumber}</h1>
-       </section>`);
-    })
-  },
-
-  roomByType: function(typeArr) {
-    $('.booking_room-container').remove();
-    return typeArr.map(room => {
-    return $('.js_all-rooms').append(`<section class="booking_room-container">
-      <section class="booking_room-image"></section>
-        <section class="booking_room-text">
-          <h3>Room Room Number ${room.number}</h3>
-          <h3>Room Type ${room.roomType}</h3>
-          <h3>Room ${room.numBeds} ${room.bedSize}size bed</h3>
-          <h3>Room Cost: $${room.costPerNight}</h3>
-          <button class="customer_book-button">Book</button>
-        </section>
       </section>`);
     })
   }
-
 
 }; //end
 

@@ -238,15 +238,17 @@ nav {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+  overflow: scroll;
 }
 
 .main_manager-operations {
-	background: $primary-blue;
+	background: $primary-purple;
 	font-family: 'Roboto Condensed', sans-serif;
 	color: #ffffff;
 	width: 70%;
 	height: 45%;
 	margin: 0 auto;
+  overflow: scroll;
 }
 
 .manager_info-boxes {

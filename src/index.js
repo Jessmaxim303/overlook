@@ -109,9 +109,16 @@ $('.js_login-submit').on('click', function() {
     })
   }
 
-  function searchUsersByName(userId, users, bookings, rooms) {
+  function searchUsersByName() {
+    const manager = new Manager(userId, users)
     let userName = $('.manager_search-input').val()
+    let userID = manager.findUser(userName)
+    const manager1 = new Manager(userID.id, users)
+    let roomsArr = manager1.returnBookedRooms(bookings)
+    let money = manager1.totelRevenue(userID, bookings, rooms)
+    dom.managerUserMoney(money)
     dom.managerUserInfo(userName)
+    dom.managerUsersPastBooking(roomsArr)
   }
   
 

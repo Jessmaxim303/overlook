@@ -52,7 +52,7 @@ describe('Customer', function() {
   });
 
   it('should return the a number for the total money spent for a user', () => {
-    expect(customer.totalMoneySpent(bookingsTestData, roomsTestData)).to.equal(77)
+    expect(customer.totalMoneySpent(bookingsTestData, roomsTestData)).to.equal('358.40')
   })
 
 });

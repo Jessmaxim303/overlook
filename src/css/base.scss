@@ -12,6 +12,8 @@ $primary-font: 'Roboto Condensed', sans-serif;
 	padding: 0;
 }
 
+/*NAV SECTION AND HEADER*/
+
 nav {
   background: $primary-darkgrey;
   color: #ffffff;
@@ -65,6 +67,8 @@ nav {
 	font-size: 14px;
 }
 
+/*MAIN BODY AREA*/
+
 .main_area {
   height: 83vh;
   width: 68%;
@@ -100,6 +104,8 @@ nav {
   flex-direction: row;
   justify-content: center;
 } 
+
+/*CUSTOMER LOG IN SECTION*/
 
 .login-feature {
   width: 40%;
@@ -231,6 +237,8 @@ nav {
 .display_none {
 	display: none;
 }
+
+/*MAIN MANAGER SECTION*/
 
 .main_manager {
 	background: $primary-lightblue;

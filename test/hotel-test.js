@@ -39,7 +39,7 @@ describe('Hotel', function() {
   });
 
   it('should return the percent of rooms occupied for today', () => {
-    expect(hotel.percentOccupied()).to.equal(25);
+    expect(hotel.percentOccupied()).to.equal('25');
   });
 
   it('should return the percent of rooms occupied for today', () => {

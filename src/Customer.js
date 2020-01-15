@@ -19,7 +19,6 @@ class Customer {
 	}
 
 	totalMoneySpent(booking, rooms) {
-		console.log('hello')
 		  let money = 0;
     let x = booking.filter(room => room.userID === this.userId).reduce((acc, date) => {
 			acc = acc.concat(date.roomNumber)

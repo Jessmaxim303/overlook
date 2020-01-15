@@ -26,6 +26,10 @@ describe('Hotel', function() {
     expect(hotel.rooms[0]).to.deep.equal({ number: 1, roomType: 'residential suite', bidet: true, bedSize: 'queen', numBeds: 1, costPerNight: 358.4 });
   });
 
+  it('should know what today date is', () => {
+    expect(hotel.todaysDate).to.equal("2020/02/05");
+  });
+
   it('should return the number of rooms vacant today', () => {
     expect(hotel.numberVacantToday()).to.equal(2);
   });
@@ -36,6 +40,10 @@ describe('Hotel', function() {
 
   it('should return the percent of rooms occupied for today', () => {
     expect(hotel.percentOccupied()).to.equal(25);
+  });
+
+  it('should return the percent of rooms occupied for today', () => {
+    expect(hotel.returnRoomsForDate("2020/02/05")).to.deep.equal([{ number: 1, roomType: 'residential suite', bidet: true, bedSize: 'queen', numBeds: 1, costPerNight: 358.4 }])
   });
 
   it('should filter and return rooms by type', () => {

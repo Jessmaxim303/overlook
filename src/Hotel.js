@@ -20,7 +20,7 @@ class Hotel {
   			}
   		})
   		return acc
-  	}, 0)
+  	}, 0).toFixed(2)
   }
 
   percentOccupied() {
@@ -33,22 +33,12 @@ class Hotel {
     return Number((percent.length / this.rooms.length).toFixed(2) * 100);
  }
 
-  returnBookedRooms(booking) {
-    return booking.filter(room => room.userID === this.userId).map(booking => {
-      return `<section class="main_customer-area">
-      <h1>Date Stayed ${booking.date}</h1>
-      <h1>Room number ${booking.roomNumber}</h1>
-      </section>`
-    })
-  }
-
   returnRoomsForDate(dateInput) {
     return this.rooms.filter(room => {
       return this.bookings.find(booked => {
       return (dateInput === booked.date && room.number === booked.roomNumber)
       })  
     })
-    
   }
 
   returnRoomsByType(type) {

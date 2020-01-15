@@ -11,11 +11,12 @@ const dom = {
 	},
 
 	userTotalRevenueSpent: function(money) {
+    console.log(money)
     $('.js_customer-money').text(`Total money spent $${money}`)
+    $('.manager_user-money').text(`Total money spent $${money}`)
 	},
 
 	allRooms: function(rooms) {
-    console.log(rooms)
     $('.booking_room-container').remove();
 		return rooms.map(room => {
 		return $('.js_all-rooms').append(`<section class="booking_room-container">
@@ -53,6 +54,10 @@ const dom = {
        <h1>Room number ${room.roomNumber}</h1>
       </section>`);
     })
+  },
+
+  managerUserInfo: function(username) {
+    $('.manager_user-name').html(username)
   }
 
 }; //end

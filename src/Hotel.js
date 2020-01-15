@@ -46,8 +46,8 @@ class Hotel {
     return this.rooms.filter(room => {
       return this.bookings.find(booked => {
       return (dateInput === booked.date && room.number === booked.roomNumber)
-    })  
-}).map(room => {
+      })  
+    }).map(room => {
       return `<section class="room_date-container">
       <section class="booking_room-image"></section>
         <section class="booking_room-text">
@@ -58,6 +58,10 @@ class Hotel {
         </section>
       </section>`
     })
+  }
+
+  returnRoomsByType(type) {
+    return this.rooms.filter(room => room.roomType === type);
   }
 
 };

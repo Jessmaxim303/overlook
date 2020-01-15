@@ -8,17 +8,16 @@ import Manager from './Manager';
 import Room from './Room';
 import Hotel from './Hotel';
 
-
-console.log(dom)
-
 var users;
 var rooms;
 var bookings;
 var userId;
 
-
 var today = new Date();
 var date = today.getFullYear()+'/0'+ (today.getMonth()+1)+'/' + today.getDate();
+
+$(".booked_date-button").click(populateRoomsByDate)
+$('.booked_type-room').click(displayRoomByType)
 
 const getData = (type) => {
 	const root = 'https://fe-apps.herokuapp.com/api/v1/overlook/1904';
@@ -74,10 +73,8 @@ $('.js_login-submit').on('click', function() {
 
   function populatePastBookings(userId, users, bookings) {
       const customer = new Customer(userId, users)
-      let x = customer.returnBookedRooms(bookings)
-      // console.log(x)
-      dom.bookedRooms(x)
-    // $('.main_customer-area').after(customer.returnBookedRooms(bookings));
+      let allBookings = customer.returnBookedRooms(bookings)
+      dom.bookedRooms(allBookings)
   }
 
   function populateAllBooking(bookings, rooms, date) {
@@ -85,7 +82,6 @@ $('.js_login-submit').on('click', function() {
   	dom.allRooms(hotel.rooms)
   }
 
-$(".booked_date-button").click(populateRoomsByDate)
 
   function populateRoomsByDate() {
   	let dateInput = $('.booked_date-input').val()
@@ -93,5 +89,13 @@ $(".booked_date-button").click(populateRoomsByDate)
   	$('.js_all-rooms').remove()
   	$('.booked_date-section').after(hotel.returnRoomsForDate(dateInput))
   }
+
+  function displayRoomByType(e) {
+    const hotel = new Hotel(bookings, rooms, date);
+    let roomType = e.target.attributes[1].value;
+    let typeArray = hotel.returnRoomsByType(roomType)
+    dom.roomByType(typeArray)
+}
+
 
 

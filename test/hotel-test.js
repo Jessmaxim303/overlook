@@ -38,5 +38,9 @@ describe('Hotel', function() {
     expect(hotel.percentOccupied()).to.equal(25);
   });
 
+  it('should filter and return rooms by type', () => {
+    expect(hotel.returnRoomsByType("residential suite")).to.deep.equal([{number: 1, roomType: "residential suite", bidet: true, bedSize: "queen", numBeds: 1, costPerNight: 358.4}]);
+  });
+
 
 });
